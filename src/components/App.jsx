@@ -1,15 +1,12 @@
+import {User} from "./User/User"
+import user from "../user.json"
+import css from 'components/User/User.module.css'
+
+
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
+    <div>
+      <User user={user}/>
       React homework template
     </div>
   );
