@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import css from 'components/User/User.modele.css'
+import css from '../User/User.module.css'
 
 
 export const User = ({ user: { username, tag, location, avatar, stats }})  => {
@@ -8,7 +8,7 @@ export const User = ({ user: { username, tag, location, avatar, stats }})  => {
         <div className={css.description}>
             <img src={avatar} alt="User avatar" className={avatar} />
             <p className={css.name}>{username}</p>
-            <p className={css.tag}>{tag}</p>
+            <p className={css.tag}>@{tag}</p>
             <p className={css.location}>{location} </p>
             </div>
             
@@ -35,9 +35,10 @@ User.propTypes = {
     tag: PropTypes.string,
     location: PropTypes.string,
     avatar: PropTypes.string,
-    // stats: {
-    // followers: PropTypes.number,
-    // views: PropTypes.number,
-    // likes: PropTypes.number
-    // }
-}
+    stats: PropTypes.objectOf(
+        PropTypes.exact({
+        followers: PropTypes.number.isRequired ,
+    views: PropTypes.number.isRequired ,
+    likes: PropTypes.number.isRequired 
+    })
+    )}
