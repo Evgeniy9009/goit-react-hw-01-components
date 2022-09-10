@@ -1,14 +1,6 @@
-ul, li {
-        margin-top: 0;
-        margin-bottom: 0;
-        padding-left: 0;
-        list-style: none;
-}
-
-
-
 .statistics {
-    width: 250px;
+    width: 300px;
+    padding: 50px;
     background-color: rgb(204, 241, 229);
 }
 
