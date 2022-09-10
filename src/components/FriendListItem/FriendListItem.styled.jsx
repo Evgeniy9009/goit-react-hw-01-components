@@ -1,14 +1,6 @@
+import styled from '@emotion/styled';
 
-.friend_list {
-    width: 300px;
-background-color: rgb(238, 195, 131);
-display: inline-block;
-padding: 50px;
-margin-top: 50px;
-margin-bottom: 50px;
-}
-
-.item {
+export const Item = styled.li`
     width: 200px;
     display: flex;
     align-items: center;
@@ -18,21 +10,27 @@ margin-bottom: 50px;
     background-color: white;
     margin-bottom: 10px;
     margin-left: 50px;
-}
-
-.status {
+`
+    
+export const Status = styled.span`
     width: 4px;
     height: 4px;
     margin-left: 20px;
     margin-right: 10px;
-    background-color: red;
     border-radius: 50%;
-}
+    background-color: ${props => {
+    if (props.isOnline===true) {return `green`}
+    else {return `red`}
+    }}
+    
 
-.avatar {
-    margin: 6px;
-}
 
-.name {
-    margin-left: 10px;
-}
+`
+
+export const Avatar = styled.img`
+margin: 6px;
+`
+
+export const Name = styled.p`
+margin-left: 10px;
+`
