@@ -1,11 +1,11 @@
-import { User } from "./User/User"
+import { User } from './User/User'
 import { Statistics } from './Statistics/Statistics'
 import { FriendList } from './FriendList/FriendList'
 import { TransactionHistory } from 'components/TransactionHistory/TransactionHistory'
-import user from "../user.json"
-import data from '../data.json'
-import friends from '../friends'
-import transactions from '../transactions.json'
+import user from 'components/data/user'
+import data from 'components/data/data'
+import friends from 'components/data/friends'
+import transactions from 'components/data/transactions'
 
 
 export const App = () => {
@@ -13,7 +13,6 @@ export const App = () => {
     <div>
       <User user={user} />
       <Statistics title="Upload stats" stats={data} />
-      {/* <Statistics stats={data} /> */}
       <FriendList friends={friends} />
       
       <TransactionHistory items={transactions} />
