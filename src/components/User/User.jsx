@@ -2,16 +2,17 @@ import PropTypes from 'prop-types';
 import css from '../User/User.module.css'
 
 // {username, tag, location, avatar, stats}
-export const User = ({ user }) => {
+export const User =  ({ user }) => {
 
     return (
         <div className={css.profile}>
+
         <div className={css.description}>
             <img src={user.avatar} alt="User avatar" className={css.avatar} />
             <p className={css.name}>{user.username}</p>
             <p className={css.tag}>@{user.tag}</p>
             <p className={css.location}>{user.location} </p>
-            </div>
+        </div>
             
         <ul className={css.stats}>
             <li>
@@ -32,14 +33,16 @@ export const User = ({ user }) => {
 
 
 User.propTypes = {
-            username: PropTypes.string,
-            tag: PropTypes.string,
-            location: PropTypes.string,
-            avatar: PropTypes.string,
-            stats: PropTypes.exact({
-                    followers: PropTypes.number.isRequired,
-                    views: PropTypes.number.isRequired,
-                    likes: PropTypes.number.isRequired
-                })
-
+    user: PropTypes.shape({
+        username: PropTypes.string,
+        tag: PropTypes.string,
+        location: PropTypes.string,
+        avatar: PropTypes.string,
+        stats: PropTypes.shape({
+            followers: PropTypes.number.isRequired,
+            views: PropTypes.number.isRequired,
+            likes: PropTypes.number.isRequired
+        })
+    })
 }
+
